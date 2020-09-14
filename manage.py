@@ -1,13 +1,12 @@
-from flask import Flask 
-app = flask(__name__)
+from flask import Flask,render_template
 
-class Config(object)
-    DEBUG = True
-    
-app.config.from_object(Config)
+app = Flask(__name__)
+
+
 
 @app.route('/')
-def index()
-    return '我的第一个flask程序'
-if __name__ == '__main':
+def index():
+    return render_template('index.html')
+
+if __name__ == '__main__':
     app.run()
